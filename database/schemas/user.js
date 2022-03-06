@@ -18,5 +18,27 @@ export default {
       name: "bio",
       type: "text",
     },
+    {
+      title: "Photo",
+      name: "photo",
+      type: "image",
+    },
+    {
+      title: "Following",
+      name: "following",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "user" }],
+        },
+      ],
+      validation: (Rule) => Rule.unique(),
+    },
+    {
+      title: "Created_at",
+      name: "created_at",
+      type: "datetime",
+    },
   ],
 };
