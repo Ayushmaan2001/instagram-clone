@@ -1,0 +1,11 @@
+#form-control{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: center;
+    width: 20%;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
