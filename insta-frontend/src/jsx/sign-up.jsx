@@ -1,4 +1,5 @@
 import "../css/signup.css";
+import {useNavigate} from 'react-router-dom';
 import { useRef, useState } from "react";
 import axios from "axios";
 
@@ -6,6 +7,7 @@ function SignUp() {
   const username = new useRef();
   const first_name = new useRef();
   const last_name = new useRef();
+  let navigate = new useNavigate();
   // const [user_name, setUser_name] = useState("");
   // const [firstname, setFirstname] = useState("");
   // const [lastname, setLastname] = useState("");
@@ -15,13 +17,14 @@ function SignUp() {
   }
   const register = () => {
     axios
-      .post("http://localhost:3001/register", {
+      .post("http://localhost:3001/register",{
         user: username.current.value,
         first: first_name.current.value,
         last: last_name.current.value,
       })
       .then((res) => {
-        alert(res.data);
+        alert(res.data)
+        navigate("/");
       });
   };
 

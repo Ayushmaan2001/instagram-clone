@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "instagram-clone"
-  },
   "api": {
     "projectId": "i8p6yqux",
     "dataset": "production"
+  },
+  "project": {
+    "name": "instagram-clone"
   },
   "plugins": [
     "@sanity/base",

@@ -1,19 +1,22 @@
-const app = require("express")();
-const bodyparser = require("body-parser");
-const core = require("cors");
+import express from "express";
+import bodyparser from "body-parser";
+import functions from "./apiCalls.js";
+import core from "cors";
+const app = express();
+
+const {createUser}  = functions;
+
 app.use(core());
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: false }));
 
-const p = [];
-
 app.post("/register", (req, res) => {
-  p.push(req.body.user);
-  res.send("done");
-});
-
-app.get("/show", (req, res) => {
-  res.send(p);
+  const body = req.body;
+  createUser(body.user, body.first, body.last).then((data) => {
+    res.send("Successfullt created")
+  }).catch((err) => {
+    res.send(err);
+  });
 });
 
 app.listen(3001, () => {

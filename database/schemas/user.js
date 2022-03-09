@@ -14,6 +14,11 @@ export default {
       type: "string",
     },
     {
+      title:"Username",
+      name:"username",
+      type:'string'
+    },
+    {
       title: "Bio",
       name: "bio",
       type: "text",
